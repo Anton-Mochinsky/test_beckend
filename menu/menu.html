@@ -1,0 +1,12 @@
+<ul>
+    {% for item in menu_items %}
+        <li>{{ item.title }}</li>
+        {% if item.children %}
+            <ul>
+                {% for child in item.children.all %}
+                    <li>{{ child.title }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+</ul>
